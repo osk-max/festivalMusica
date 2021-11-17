@@ -1,0 +1,31 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.header {
+  background-color: v.$verde;       
+  h1 {
+    color: v.$blanco;
+    text-align: center;
+    margin-top: 1rem;    
+  }
+  .contenido-header {
+    @include m.tablet {
+      display: flex;
+    }
+  }
+
+  }  
+
+.navegacion-principal {  
+  a {
+    color: v.$blanco;
+    display: block;
+    text-align: center;
+    margin-bottom: 1rem;
+    
+    &:hover {
+      color: v.$amarillo;
+    } 
+  }
+}
+
