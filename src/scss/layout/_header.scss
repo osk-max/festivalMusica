@@ -6,22 +6,34 @@
   h1 {
     color: v.$blanco;
     text-align: center;
-    margin-top: 1rem;    
-  }
-  .contenido-header {
+    margin-bottom: 1.5rem;
     @include m.tablet {
-      display: flex;
+      margin: 0;
     }
   }
-
-  }  
+  .contenido-header {
+    padding: 2rem;
+    @include m.tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}  
 
 .navegacion-principal {  
+  @include m.tablet {
+    display: flex;
+    gap: 2rem;
+  }
   a {
     color: v.$blanco;
     display: block;
     text-align: center;
     margin-bottom: 1rem;
+    @include m.tablet {
+      margin: 0;
+    }
     
     &:hover {
       color: v.$amarillo;
