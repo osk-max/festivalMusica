@@ -3,19 +3,41 @@
 
 .video {
   position: relative; // Para poder encimar el overlay
+  max-height: 40rem; // Max tamaño de alto
+  overflow: hidden; // Ajusta el tamaño del video segun el max height y la pantalla
+
   .overlay { // Para poder encimar el overlay
     position: absolute;
     background: rgb(165, 3, 255);
     background: linear-gradient(170deg, rgba(165, 3, 255, 0.5) 0%, rgba(255, 0, 110, 0.3) 100%);    
     width: 100%;
     height: 100%;
+    display: flex; // Para posicionar las letras
+    flex-direction: column; // Para posicionar las letras
+    justify-content: center; // Para posicionar las letras    
   }
-  
+    
   video {
     width: 100%;
+    display: block; // Se utiliza para que el marco del video no exceda de mas
   }
+}
 
-  
+.contenido-video {
+  z-index: 1; // Sobre poner este contenido ya que estaba encima delvide y no dejaba copiarse pero ya si 
+  h2 {
+    color: v.$blanco;
+    font-size: 4.5rem;
+    margin: 0;
+  }
+  p {
+    background-color: v.$rosa;
+    color: v.$blanco;
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    margin: 0;
 
+  }
 
 }

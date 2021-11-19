@@ -437,6 +437,8 @@ h3 {
 
 .video {
   position: relative;
+  max-height: 40rem;
+  overflow: hidden;
 }
 .video .overlay {
   position: absolute;
@@ -444,7 +446,28 @@ h3 {
   background: linear-gradient(170deg, rgba(165, 3, 255, 0.5) 0%, rgba(255, 0, 110, 0.3) 100%);
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .video video {
   width: 100%;
+  display: block;
+}
+
+.contenido-video {
+  z-index: 1;
+}
+.contenido-video h2 {
+  color: #FFF;
+  font-size: 4.5rem;
+  margin: 0;
+}
+.contenido-video p {
+  background-color: #F53756;
+  color: #FFF;
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  margin: 0;
 }
