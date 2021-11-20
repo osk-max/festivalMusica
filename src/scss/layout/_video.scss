@@ -4,9 +4,10 @@
 .video {
   position: relative; // Para poder encimar el overlay
   max-height: 40rem; // Max tamaño de alto
+  min-height: 20rem;
   overflow: hidden; // Ajusta el tamaño del video segun el max height y la pantalla
 
-  .overlay { // Para poder encimar el overlay
+  .overlay { // Para poner encimar el overlay
     position: absolute;
     background: rgb(165, 3, 255);
     background: linear-gradient(170deg, rgba(165, 3, 255, 0.5) 0%, rgba(255, 0, 110, 0.3) 100%);    
@@ -17,9 +18,12 @@
     justify-content: center; // Para posicionar las letras    
   }
     
-  video {
-    width: 100%;
+  video {  
+    width: auto;
     display: block; // Se utiliza para que el marco del video no exceda de mas
+    @include m.desktop {
+      width: 100%; // Cuadrar el video       
+    }
   }
 }
 
@@ -37,7 +41,5 @@
     padding: 1rem 2rem;
     font-weight: bold;
     margin: 0;
-
   }
-
 }
