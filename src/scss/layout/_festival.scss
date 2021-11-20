@@ -1,0 +1,28 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.sobre-festival {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+
+
+  .imagen img{
+    width: 40rem;
+    
+
+  }
+
+
+}
+.contenido-festival {
+  h2 {
+
+  }
+  .fecha {
+
+  }
+
+
+}
