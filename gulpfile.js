@@ -5,6 +5,8 @@ const sass = require('gulp-sass')(require('sass'));
 const plumber = require('gulp-plumber');
 
 // Imagenes
+const cache = require('gulp-cache');
+const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
 
 function css( done ){
@@ -15,6 +17,17 @@ src('src/scss/**/*.scss') //Identificas archivo scss a compilar
   .pipe( dest('build/css') ) // Almacenarlo en el disco duro
 
   done();
+}
+
+function imagenes( done ) {
+
+  const opciones = {
+    optimizationLevel: 3
+  };
+  src('src/img/**/*.{png,jpg}') // Para identificar los archivos
+    .pipe( cache( imagemin( opciones ) ) ) // imagemin optimiza la imagen y va a quedar en cache
+    .pipe( dest( 'build/img' ) ) // Donde quedaran almacenadas
+  done(); // Avisa que ya termino todo el procesamiento
 }
 
 function versionWebp( done ) {
@@ -37,6 +50,7 @@ function dev(done) {
 }
 
 exports.css = css;
+exports.imagenes = imagenes;
 exports.versionWebp = versionWebp; // Ponemos disponoble nuestra funcion en el gulp
-exports.dev = parallel( versionWebp, dev ); // Por el parallel va a ejecutar las dos funciones
+exports.dev = parallel( imagenes, versionWebp, dev ); // Por el parallel va a ejecutar las dos funciones
 
