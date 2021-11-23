@@ -37,7 +37,10 @@
 
     <section class="contenedor sobre-festival">
         <div class="imagen">
-            <img src="img/imagen_vocalista.jpg" alt="Imagen vocalista festival">
+            <picture>
+                <source srcset="build/img/imagen_vocalista.avif" type="image/avif"><!-- Aqui estoy cargando el source de la imagen  -->
+                <img src="build/img/imagen_vocalista.jpg" alt="Vocalista concierto"><!-- Este es un fallback en caso de que no soporte el avif utilizara este  -->
+            </picture>
         </div><!-- imagen -->
         <div class="contenido-festival">
             <h2>Rock & EDM Festival</h2>
