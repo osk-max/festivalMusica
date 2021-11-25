@@ -525,3 +525,52 @@ img {
   color: #F53756;
   font-weight: 700;
 }
+
+.lineup {
+  background-color: #F53756;
+  padding: 5rem 0;
+}
+.lineup h3, .lineup p {
+  text-align: center;
+  color: #FFF;
+}
+.lineup .dia {
+  text-transform: uppercase;
+  margin: 3.5rem 0 3.5rem 0;
+}
+
+@media (min-width: 768px) {
+  .escenarios-contenedor {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+.escenarios-contenedor p {
+  color: #000;
+}
+.escenarios-contenedor .escenario {
+  padding-top: 1rem;
+}
+.escenarios-contenedor .escenario-edm {
+  padding-top: 1rem;
+}
+
+.bg-amarillo {
+  background-color: #FEF46D;
+}
+
+.bg-verde {
+  background-color: #4CB8B3;
+}
+
+p:after {
+  content: "";
+  display: block;
+  width: 20rem;
+  height: 10rem;
+  background-size: 15rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 2rem auto 0 auto;
+}

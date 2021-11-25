@@ -1,0 +1,51 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.lineup {
+  background-color: v.$rosa;
+  padding: 5rem 0;
+
+  h3, p {
+    text-align: center;
+    color: v.$blanco;    
+  }
+  .dia {
+    text-transform: uppercase;
+    margin: 3.5rem 0 3.5rem 0;
+  }
+}
+
+.escenarios-contenedor {
+  @include m.tablet {
+    @include m.grid(2, 3rem);
+  }
+  p {
+    color: v.$negro
+  }  
+}
+
+.bg-amarillo {
+  background-color: v.$amarillo;
+}
+.bg-verde {
+  background-color: v.$verde;
+}
+
+.escenario {
+  padding-top: 1rem;
+  p {
+    &:after { // Es un pseudo elemento
+      content: ''; // Siempre que hay un pseudo elemento debe ir un content de esta manera
+      display: block;
+      width: 20rem;
+      height: 10rem;
+      background-size: 15rem;
+      background-repeat: no-repeat;
+      background-position: center center;
+      margin: 2rem auto 0 auto;  
+
+    }
+  }
+}   
+
+
