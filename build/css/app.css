@@ -549,22 +549,11 @@ img {
 .escenarios-contenedor p {
   color: #000;
 }
-.escenarios-contenedor .escenario {
+
+.escenario {
   padding-top: 1rem;
 }
-.escenarios-contenedor .escenario-edm {
-  padding-top: 1rem;
-}
-
-.bg-amarillo {
-  background-color: #FEF46D;
-}
-
-.bg-verde {
-  background-color: #4CB8B3;
-}
-
-p:after {
+.escenario .nombre-escenario:after {
   content: "";
   display: block;
   width: 20rem;
@@ -572,5 +561,40 @@ p:after {
   background-size: 15rem;
   background-repeat: no-repeat;
   background-position: center center;
-  margin: 2rem auto 0 auto;
+  margin: 1rem auto 0 auto;
+}
+
+.edm .nombre-escenario:after {
+  background-image: url(../img/icono_edm.png);
+}
+
+.rock .nombre-escenario:after {
+  background-image: url(../img/icono_rock.png);
+}
+
+.calendario {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.calendario li {
+  padding: 2rem;
+  font-weight: 700;
+}
+.calendario li span {
+  font-weight: 400;
+}
+
+.bg-amarillo {
+  background-color: #FEF46D;
+}
+.bg-amarillo li:nth-child(odd) {
+  background-color: #fdee21;
+}
+
+.bg-verde {
+  background-color: #4CB8B3;
+}
+.bg-verde li:nth-child(odd) {
+  background-color: #3b9691;
 }

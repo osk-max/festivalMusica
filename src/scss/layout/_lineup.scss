@@ -20,20 +20,13 @@
     @include m.grid(2, 3rem);
   }
   p {
-    color: v.$negro
+    color: v.$negro;    
   }  
-}
-
-.bg-amarillo {
-  background-color: v.$amarillo;
-}
-.bg-verde {
-  background-color: v.$verde;
 }
 
 .escenario {
   padding-top: 1rem;
-  p {
+  .nombre-escenario {
     &:after { // Es un pseudo elemento
       content: ''; // Siempre que hay un pseudo elemento debe ir un content de esta manera
       display: block;
@@ -42,10 +35,42 @@
       background-size: 15rem;
       background-repeat: no-repeat;
       background-position: center center;
-      margin: 2rem auto 0 auto;  
-
+      margin: 1rem auto 0 auto;      
     }
   }
 }   
 
+.edm .nombre-escenario:after {
+  background-image: url(../img/icono_edm.png);
+}
+
+.rock .nombre-escenario:after {
+  background-image: url(../img/icono_rock.png);
+}
+
+.calendario {
+  @include m.resetear-lista;
+  li {
+    padding: 2rem;
+    font-weight: 700;
+
+    span {
+      font-weight: 400;
+    }
+  }
+}
+
+.bg-amarillo {
+  background-color: v.$amarillo;
+
+  li:nth-child(odd){ // Con odd selecciono impares
+    background-color: darken(v.$amarillo, 15%);
+  }  
+}
+.bg-verde {
+  background-color: v.$verde;
+  li:nth-child(odd){ // Con odd selecciono impares
+    background-color: darken(v.$verde, 10%);
+  }
+}
 
