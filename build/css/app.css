@@ -534,12 +534,21 @@ img {
   text-align: center;
   color: #FFF;
 }
-.lineup .dia {
+.lineup .dia, .lineup .dia2 {
   text-transform: uppercase;
-  margin: 3.5rem 0 3.5rem 0;
+  margin: 4.5rem 0;
+  font-weight: bold;
+}
+.lineup .dia2 {
+  margin-top: 5.5rem;
+}
+@media (min-width: 992px) {
+  .lineup .dia2 {
+    margin-top: 6.5rem;
+  }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .escenarios-contenedor {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -552,6 +561,12 @@ img {
 
 .escenario {
   padding-top: 1rem;
+  margin-top: 3rem;
+}
+@media (min-width: 992px) {
+  .escenario {
+    margin-top: 0;
+  }
 }
 .escenario .nombre-escenario:after {
   content: "";
