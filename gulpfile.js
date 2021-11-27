@@ -55,16 +55,23 @@ function versionAvif( done ) {
   done();
 }
 
+function javascript( done ) {
+  src( 'src/js/**/*.js' ) // Ubicacion donde estaran todos los archivos JS
+    .pipe( dest( 'build/' ) ) // Destino donde estara en el build 
+    done();
+}
+
 function dev(done) {
 
   watch('src/scss/**/*.scss', css) // Toma dos parametros 1-A que archivo le voy a hacer watch 2-Que funcion va a estar asociada
-
+  watch('src/js/**/*.js', javascript) // // Tambien toma los parametros para que este ecuchando los cambio de JS y los realice de inmediato
   done();
 }
 
 exports.css = css;
+exports.javascript = javascript;
 exports.imagenes = imagenes;
 exports.versionWebp = versionWebp; // Ponemos disponible nuestra funcion en el gulp
 exports.versionAvif = versionAvif; // Ponemos disponible nuestra funcion en el gulp
-exports.dev = parallel( imagenes, versionWebp, versionAvif, dev ); // Por el parallel va a ejecutar las dos funciones
+exports.dev = parallel( imagenes, versionWebp, versionAvif, javascript, dev ); // Por el parallel va a ejecutar las dos funciones
 
