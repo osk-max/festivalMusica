@@ -16,6 +16,15 @@ function crearGaleria() {
       <source srcset="build/img/thumb/${i}.webp" type="image/webp">
       <img loading="lazy" width="200" height="300" src="build/img/thumb/${i}.jpg" alt="Imagen galeria">
      `; 
+     imagen.onclick = function() { // Lo utilizaremos para que nos indique a que foto le estamos dando click
+       mostrarImagen( i );
+     }
     galeria.appendChild(imagen);
   }
 }
+
+function mostrarImagen( id ) { // Lo utilizaremos para que nos indique a que foto le estamos dando click
+
+  console.log('mostrando...', id);
+}
+
