@@ -32,11 +32,21 @@ function mostrarImagen( id ) { // Lo utilizaremos para que nos indique a que fot
       <img loading="lazy" width="200" height="300" src="build/img/grande/${id}.jpg" alt="Imagen galeria">
      `;
 
+  // Crea el overlay con la imagen 
   const overlay = document.createElement('DIV'); // Creo el div y se lo asigno al overlay
   overlay.appendChild(imagen); // A ese DIV le agrego como hijo a imagen
-  overlay.classList.add('overlay') // Agrego uma clase llamada overlay para poder darle estilos con css 
+  overlay.classList.add('overlay') // Agrego uma clase llamada overlay para poder darle estilos con css
+  
+  // Boton para cerrar el Modal
+  const cerrarModal = document.createElement('P'); //Creamos el elemento parrafo
+  cerrarModal.textContent = 'X'; // Agregamos el contenido txt una X
+  cerrarModal.classList.add('btn-cerrar'); // Creamos la clase btn-cerrar
 
+  overlay.appendChild(cerrarModal); // Lo agrego al overlay  
+
+  // Lo añade al html 
   const body = document.querySelector('body'); // Selecciono todo el body 
   body.appendChild(overlay) // Le agrego el overlay al body para que agrege la imagen y la muestre
 }
+
 
