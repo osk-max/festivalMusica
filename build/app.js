@@ -41,12 +41,21 @@ function mostrarImagen( id ) { // Lo utilizaremos para que nos indique a que fot
   const cerrarModal = document.createElement('P'); //Creamos el elemento parrafo
   cerrarModal.textContent = 'X'; // Agregamos el contenido txt una X
   cerrarModal.classList.add('btn-cerrar'); // Creamos la clase btn-cerrar
+  cerrarModal.onclick = function() { // Cuando de click indico que elimine el overlay
+      // Lo añade al html 
+    const body = document.querySelector('body'); // Selecciono todo el body 
+    body.classList.remove('fijar-body'); // Elimino la class del body
+    
+    overlay.remove();
 
-  overlay.appendChild(cerrarModal); // Lo agrego al overlay  
+  };
+
+  overlay.appendChild(cerrarModal); // Lo agrego al overlay 
 
   // Lo añade al html 
   const body = document.querySelector('body'); // Selecciono todo el body 
   body.appendChild(overlay) // Le agrego el overlay al body para que agrege la imagen y la muestre
+  body.classList.add('fijar-body'); // Le creo un class al body
 }
 
 
