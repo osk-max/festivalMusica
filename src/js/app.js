@@ -36,18 +36,25 @@ function mostrarImagen( id ) { // Lo utilizaremos para que nos indique a que fot
   const overlay = document.createElement('DIV'); // Creo el div y se lo asigno al overlay
   overlay.appendChild(imagen); // A ese DIV le agrego como hijo a imagen
   overlay.classList.add('overlay') // Agrego uma clase llamada overlay para poder darle estilos con css
+
+  overlay.onclick = function() {
+      // Para poder cerrar la imagen grande dando click en cualquier parte 
+    const body = document.querySelector('body'); // Selecciono todo el body 
+    body.classList.remove('fijar-body'); // Elimino la clase del body
+    overlay.remove(); // Elimino el overlay
+  };
   
   // Boton para cerrar el Modal
   const cerrarModal = document.createElement('P'); //Creamos el elemento parrafo
   cerrarModal.textContent = 'X'; // Agregamos el contenido txt una X
   cerrarModal.classList.add('btn-cerrar'); // Creamos la clase btn-cerrar
+  
   cerrarModal.onclick = function() { // Cuando de click indico que elimine el overlay
-      // Lo añade al html 
+      // Para cerrar la imagen dando click en la X
     const body = document.querySelector('body'); // Selecciono todo el body 
     body.classList.remove('fijar-body'); // Elimino la class del body
     
-    overlay.remove();
-
+    overlay.remove(); // Elimino el overlay
   };
 
   overlay.appendChild(cerrarModal); // Lo agrego al overlay 
@@ -57,5 +64,3 @@ function mostrarImagen( id ) { // Lo utilizaremos para que nos indique a que fot
   body.appendChild(overlay) // Le agrego el overlay al body para que agrege la imagen y la muestre
   body.classList.add('fijar-body'); // Le creo un class al body
 }
-
-
