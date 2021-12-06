@@ -4,7 +4,20 @@ document.addEventListener('DOMContentLoaded', function() { // Vamos a escuchar n
 
 function iniciarApp() {
   crearGaleria();
-}
+  scrollNav();
+};
+
+function scrollNav() {
+  const enlaces = document.querySelectorAll( '.navegacion-principal a' ) // Selecciono los enlaces
+  
+  enlaces.forEach( enlace => { 
+    enlace.addEventListener( 'click', function(e) {
+
+      console.log(e.target); // Vamos a mirar a que le damos click - target es a lo que le hemos dado click 
+  
+    });
+  });
+};
 
 function crearGaleria() {
   const galeria = document.querySelector('.galeria-imagenes');
