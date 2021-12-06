@@ -12,9 +12,11 @@ function scrollNav() {
   
   enlaces.forEach( enlace => { 
     enlace.addEventListener( 'click', function(e) {
+      e.preventDefault();
 
-      console.log(e.target); // Vamos a mirar a que le damos click - target es a lo que le hemos dado click 
-  
+      const seccionScroll = e.target.attributes.href.value; // Le asigno el value del href
+      const seccion = document.querySelector( seccionScroll );
+      seccion.scrollIntoView( { behavior: 'smooth' } ); // Le paso el objeto de configuracion y adentro el behavior o comportamiento y decirle que utilice smooth como comportamiento   
     });
   });
 };
