@@ -3,8 +3,19 @@ document.addEventListener('DOMContentLoaded', function() { // Vamos a escuchar n
 });
 
 function iniciarApp() {
+  navegacionFija();
   crearGaleria();
   scrollNav();
+};
+
+function navegacionFija() {
+  const barra = document.querySelector('.header'); // Selecciono la clase header
+  const sobreFestival = document.querySelector('.sobre-festival'); // Donde saldra nuevamente el header
+  
+  window.addEventListener( 'scroll', function() {
+    console.log( sobreFestival.getBoundingClientRect() );
+
+  });
 };
 
 function scrollNav() {
