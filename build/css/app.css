@@ -355,6 +355,9 @@ body {
 body.fijar-body {
   overflow: hidden;
 }
+body.body-scroll {
+  padding-top: 11.9rem;
+}
 
 p {
   font-size: 1.5rem;

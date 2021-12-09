@@ -16,6 +16,9 @@ body {
   &.fijar-body {
     overflow: hidden;
   }
+  &.body-scroll {
+    padding-top: 11.9rem; // El tamaño de la barra es de 119px y tiene que tener el mismo tamaño porque estamos sacando el header del html para ponerlo en una posicion fija
+  }
 }
 
 p {

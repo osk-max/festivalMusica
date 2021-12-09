@@ -11,12 +11,15 @@ function iniciarApp() {
 function navegacionFija() {
   const barra = document.querySelector('.header'); // Selecciono la clase header
   const sobreFestival = document.querySelector('.sobre-festival'); // Donde saldra nuevamente el header
-  
+  const body = document.querySelector('body');
+
   window.addEventListener( 'scroll', function() {
     if( sobreFestival.getBoundingClientRect().bottom < 0 ) { // Si es menor 0 quiere decir que ya pase el elemento       
       barra.classList.add('fijo');
+      body.classList.add('body-scroll');
     } else {
       barra.classList.remove('fijo');
+      body.classList.remove('body-scroll');
     }
   });
 };
