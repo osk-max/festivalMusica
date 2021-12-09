@@ -13,8 +13,11 @@ function navegacionFija() {
   const sobreFestival = document.querySelector('.sobre-festival'); // Donde saldra nuevamente el header
   
   window.addEventListener( 'scroll', function() {
-    console.log( sobreFestival.getBoundingClientRect() );
-
+    if( sobreFestival.getBoundingClientRect().bottom < 0 ) { // Si es menor 0 quiere decir que ya pase el elemento       
+      barra.classList.add('fijo');
+    } else {
+      barra.classList.remove('fijo');
+    }
   });
 };
 
