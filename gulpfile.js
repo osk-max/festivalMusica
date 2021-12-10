@@ -3,6 +3,9 @@ const { src, dest, watch, parallel } = require('gulp');
 // CSS
 const sass = require('gulp-sass')(require('sass'));
 const plumber = require('gulp-plumber');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
+const postcss = require('gulp-postcss');
 
 // Imagenes
 const cache = require('gulp-cache');
@@ -15,6 +18,7 @@ function css( done ){
 src('src/scss/**/*.scss') //Identificas archivo scss a compilar
   .pipe(plumber())
   .pipe( sass() ) // Compilarlo
+  .pipe( postcss([ autoprefixer(), cssnano() ]) ) // Funcionamiento cualquier navegador y comprension
   .pipe( dest('build/css') ) // Almacenarlo en el disco duro
 
   done();
