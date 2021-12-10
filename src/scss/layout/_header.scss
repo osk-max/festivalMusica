@@ -5,6 +5,8 @@
   background-color: v.$verde;
   @include m.tablet {
     &.fijo {
+      left: 0; // Posicionarlo lado izquierdo
+      top: 0; // Posicionarlo parte superior
       position: fixed; // Posicion fija
       width: 100%; // Tamaño a lo ancho
       box-shadow: .1rem .2rem .3rem #333; // Sombra 
