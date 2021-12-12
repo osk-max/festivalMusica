@@ -6,6 +6,7 @@ const plumber = require('gulp-plumber');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const postcss = require('gulp-postcss');
+const sourcemaps = require('gulp-sourcemaps');
 
 // Imagenes
 const cache = require('gulp-cache');
@@ -16,9 +17,11 @@ const avif = require('gulp-avif');
 function css( done ){
 
 src('src/scss/**/*.scss') //Identificas archivo scss a compilar
+  .pipe(sourcemaps.init()) // Con esto se inicializa el sourcemaps
   .pipe(plumber())
   .pipe( sass() ) // Compilarlo
   .pipe( postcss([ autoprefixer(), cssnano() ]) ) // Funcionamiento cualquier navegador y comprension
+  .pipe( sourcemaps.write('.')) // Esta es la ubicacion donde se va a guardar con el punto le indico que es la misma que tengo abajo
   .pipe( dest('build/css') ) // Almacenarlo en el disco duro
 
   done();
