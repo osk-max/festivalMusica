@@ -14,6 +14,9 @@ const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
 const avif = require('gulp-avif');
 
+// Javascript
+const terser = require('gulp-terser-js');
+
 function css( done ){
 
 src('src/scss/**/*.scss') //Identificas archivo scss a compilar
@@ -64,6 +67,9 @@ function versionAvif( done ) {
 
 function javascript( done ) {
   src( 'src/js/**/*.js' ) // Ubicacion donde estaran todos los archivos JS
+    .pipe(sourcemaps.init()) // Inicializar sourcemaps
+    .pipe(terser()) // Mimificar el codigo JS
+    .pipe(sourcemaps.write('.')) // Esta es la ubicacion donde se va a guardar con el punto le indico que es la misma que tengo abajo
     .pipe( dest( 'build/' ) ) // Destino donde estara en el build 
     done();
 }
